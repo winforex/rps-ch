@@ -1,0 +1,50 @@
+<script>
+
+	function computerPlay(){
+
+		let num = Math.floor(Math.random() * 3);
+
+		if(num==0){
+			return "rock"
+		} else if(num==1){
+			return "paper"
+		} else {
+			return "scissors"
+		}
+
+	}
+
+	function rps(playerSelection, compSelection){
+
+		let player = playerSelection.toLowerCase()
+
+		if(player == compSelection){
+			return "It's a tie!"
+		} else if(player=="rock" && compSelection=="paper"){
+			return "You lose! Paper beats Rock"
+		} else if(player=="paper" && compSelection=="rock"){
+			return "You win! Paper beats Rock"
+		} else if(player=="rock" && compSelection=="scissors"){
+			return "You win! Rock beats Scissors"
+		} else if(player=="scissors" && compSelection=="rock"){
+			return "You lose! Rock beats Scissors"
+		} else if(player=="paper" && compSelection=="scissors"){
+			return "You lose! Scissors beats Paper"
+		} else if(player=="scissors" && compSelection=="paper"){
+			return "You win! Scissors beats Paper"
+		}
+	}
+
+	function game(){
+
+		for(let i=0; i<5; i++){
+			let playerSelection = prompt("Choose between rock, paper, and scissors")
+			let computerSelection = computerPlay()
+			console.log(rps(playerSelection, computerSelection))			
+		}
+
+	}
+
+</script>
+
+

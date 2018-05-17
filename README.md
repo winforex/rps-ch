@@ -1,0 +1,1 @@
+Simple version of Rock Paper Scissors
